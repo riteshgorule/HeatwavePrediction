@@ -427,78 +427,125 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Bento Grid Container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            {/* Feature 1 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
+            {/* Feature 1 (Wide Box - Spans 2 columns) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group md:col-span-2 lg:col-span-2 h-full flex flex-col justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 <Brain size={22} />
               </div>
               <span className="text-[11px] font-mono font-bold text-amber-900 tracking-wider uppercase">01 • AI PREDICTION ENGINE</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">Ensemble Thermal Forecast</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-stone-900 mt-2 mb-3">Ensemble Thermal Forecast</h3>
+              <p className="text-stone-600 text-sm leading-relaxed max-w-xl">
                 Utilizes ConvLSTM and Spatial Transformer neural networks trained on 40 years of IMD historical gridded dataset to forecast temperatures up to 14 days in advance.
               </p>
             </div>
 
-            {/* Feature 2 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
+            {/* Feature 2 (Standard Box) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group h-full flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 <Map size={22} />
               </div>
-              <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">02 • GIS & SPATIAL MAPPING</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">District Hotspot Radar</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                High-resolution interactive heat mapping that isolates urban heat islands, rural heat traps, and micro-climatic anomalies down to sub-district boundaries.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
-                <ShieldAlert size={22} />
+              <div className="mt-auto pt-6">
+                <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">02 • GIS & MAPPING</span>
+                <h3 className="text-xl font-bold text-stone-900 mt-2 mb-3">District Hotspot Radar</h3>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  High-resolution interactive heat mapping that isolates urban heat islands and micro-climatic anomalies down to sub-district boundaries.
+                </p>
               </div>
-              <span className="text-[11px] font-mono font-bold text-amber-900 tracking-wider uppercase">03 • EARLY WARNING PIPELINE</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">Multi-Tier Alert Protocol</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Automated color-coded alerts (Green, Yellow, Orange, Red) adhering strictly to IMD criteria (&gt;4.5°C departure or max temp &ge; 45°C) dispatched instantaneously.
-              </p>
             </div>
 
-            {/* Feature 4 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
+            {/* Feature 3 (Tall Box - Spans 2 rows on large screens) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group md:col-span-1 lg:row-span-2 lg:col-span-1 h-full flex flex-col relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <ShieldAlert size={26} />
+              </div>
+              
+              {/* Decorative mini-dashboard element for the tall card */}
+              <div className="w-full bg-white rounded-2xl border border-stone-200 p-5 space-y-4 mb-6 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-[10px] font-mono font-bold text-stone-500">
+                    <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+                    LIVE DISPATCH
+                  </span>
+                  <span className="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">RED ALERT</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-rose-600 w-4/5"></div>
+                  </div>
+                  <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-amber-500 w-1/2"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-auto">
+                <span className="text-[11px] font-mono font-bold text-amber-900 tracking-wider uppercase">03 • EARLY WARNING PIPELINE</span>
+                <h3 className="text-2xl font-bold text-stone-900 mt-2 mb-4">Multi-Tier Alert Protocol</h3>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  Automated color-coded alerts (Green, Yellow, Orange, Red) adhering strictly to IMD criteria (&gt;4.5°C departure or max temp &ge; 45°C) dispatched instantaneously.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 4 (Standard Box) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group h-full flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 <Thermometer size={22} />
               </div>
-              <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">04 • HEAT STRESS INDEX</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">Wet-Bulb Globe Modeling</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Calculates combined heat-humidity indices (WBGT) to evaluate human physiological tolerance thresholds for outdoor laborers, agricultural workers, and vulnerable populations.
-              </p>
+              <div className="mt-auto pt-6">
+                <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">04 • HEAT STRESS INDEX</span>
+                <h3 className="text-xl font-bold text-stone-900 mt-2 mb-3">Wet-Bulb Modeling</h3>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  Calculates combined heat-humidity indices (WBGT) to evaluate human physiological tolerance thresholds for vulnerable populations.
+                </p>
+              </div>
             </div>
 
-            {/* Feature 5 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
+            {/* Feature 5 (Standard Box) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group h-full flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 <FileText size={22} />
               </div>
-              <span className="text-[11px] font-mono font-bold text-amber-900 tracking-wider uppercase">05 • LLM ADVISORIES</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">Localized Action Advisories</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Generates sector-specific advisories (Hospitals, Municipal Water Supply, Disaster Response, Schools) translated automatically into regional languages.
-              </p>
+              <div className="mt-auto pt-6">
+                <span className="text-[11px] font-mono font-bold text-amber-900 tracking-wider uppercase">05 • LLM ADVISORIES</span>
+                <h3 className="text-xl font-bold text-stone-900 mt-2 mb-3">Localized Action Guides</h3>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  Generates sector-specific advisories (Hospitals, Water Supply) translated automatically into regional languages.
+                </p>
+              </div>
             </div>
 
-            {/* Feature 6 */}
-            <div className="bg-[#FAF8F5] p-8 rounded-2xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform">
-                <Satellite size={22} />
+            {/* Feature 6 (Wide Box - Spans 2 columns) */}
+            <div className="bg-[#FAF8F5] p-8 rounded-3xl border border-stone-200/90 hover:border-amber-700/40 hover:shadow-xl transition-all group md:col-span-2 lg:col-span-2 h-full flex flex-col sm:flex-row sm:items-center justify-between gap-8">
+              <div className="flex-1">
+                <div className="w-12 h-12 rounded-2xl bg-stone-900 text-amber-400 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <Satellite size={22} />
+                </div>
+                <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">06 • TELEMETRY FUSION</span>
+                <h3 className="text-2xl font-bold text-stone-900 mt-2 mb-3">INSAT & AWS Sensor Fusion</h3>
+                <p className="text-stone-600 text-sm leading-relaxed max-w-md">
+                  Real-time data ingestion combining INSAT-3D thermal infrared channels, Copernicus land surface temperature, and over 3,400 ground Automatic Weather Stations (AWS).
+                </p>
               </div>
-              <span className="text-[11px] font-mono font-bold text-stone-700 tracking-wider uppercase">06 • TELEMETRY FUSION</span>
-              <h3 className="text-xl font-bold text-stone-900 mt-1 mb-3">INSAT & AWS Sensor Fusion</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Real-time data ingestion combining INSAT-3D thermal infrared channels, Copernicus land surface temperature, and over 3,400 ground Automatic Weather Stations (AWS).
-              </p>
+              
+              {/* Decorative side panel for the wide card */}
+              <div className="hidden md:flex flex-col gap-3 p-5 bg-white border border-stone-200 rounded-2xl min-w-[220px] shadow-sm">
+                <div className="flex items-center justify-between text-xs font-mono text-stone-500 border-b border-stone-100 pb-3">
+                  <span className="font-semibold">INSAT-3D Link</span>
+                  <span className="text-emerald-500 font-bold bg-emerald-50 px-2 py-0.5 rounded">ACTIVE</span>
+                </div>
+                <div className="flex items-center justify-between text-xs font-mono text-stone-500 border-b border-stone-100 py-2">
+                  <span className="font-semibold">AWS Ground Nodes</span>
+                  <span className="text-stone-900 font-bold">3,420</span>
+                </div>
+                <div className="flex items-center justify-between text-xs font-mono text-stone-500 pt-2">
+                  <span className="font-semibold">Copernicus ERA5</span>
+                  <span className="text-emerald-500 font-bold bg-emerald-50 px-2 py-0.5 rounded">SYNCED</span>
+                </div>
+              </div>
             </div>
 
           </div>

@@ -15,7 +15,6 @@ import AlertsEarlyWarning from './pages/AlertsEarlyWarning';
 import AIAdvisoryGenerator from './pages/AIAdvisoryGenerator';
 import Analytics from './pages/Analytics';
 import Reports from './pages/Reports';
-import AboutProject from './pages/AboutProject';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 
@@ -89,14 +88,6 @@ function App() {
             element={
               <Layout>
                 <Reports />
-              </Layout>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <Layout>
-                <AboutProject />
               </Layout>
             }
           />

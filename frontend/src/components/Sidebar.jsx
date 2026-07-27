@@ -24,7 +24,6 @@ const navItems = [
   { name: 'AI Advisory', path: '/ai-advisory', icon: Bot },
   { name: 'Analytics', path: '/analytics', icon: BarChart3 },
   { name: 'Reports', path: '/reports', icon: FileText },
-  { name: 'About Project', path: '/about', icon: Info },
   { name: 'Settings', path: '/settings', icon: Settings },
 ];
 

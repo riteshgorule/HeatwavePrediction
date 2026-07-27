@@ -1,32 +1,126 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 
-// Import your page components
-import LandingPage from './LandingPage';
-import Dashboard from './Dashboard';
-import WeatherMonitoring from './WeatherMonitoring';
+// Components & Layout
+import Layout from './components/Layout';
+
+// Pages
+import LandingPage from './pages/LandingPage';
+import Dashboard from './pages/Dashboard';
+import WeatherMonitoring from './pages/WeatherMonitoring';
+import InteractiveHeatMap from './pages/InteractiveHeatMap';
+import HeatwaveHotspots from './pages/HeatwaveHotspots';
+import AlertsEarlyWarning from './pages/AlertsEarlyWarning';
+import AIAdvisoryGenerator from './pages/AIAdvisoryGenerator';
+import Analytics from './pages/Analytics';
+import Reports from './pages/Reports';
+import AboutProject from './pages/AboutProject';
+import Settings from './pages/Settings';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
-      {/* 
-        Temporary Developer Navigation: 
-        This is just so you can easily click between pages while building. 
-        You can remove this later once your actual UI navigation is wired up! 
-      */}
-      <div className="bg-slate-900 text-white p-3 flex justify-center gap-6 text-sm font-medium">
-        <Link to="/" className="hover:text-orange-400">Landing Page</Link>
-        <Link to="/dashboard" className="hover:text-orange-400">Main Dashboard</Link>
-        <Link to="/monitoring" className="hover:text-orange-400">GIS & Monitoring</Link>
-      </div>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          {/* Landing Page */}
+          <Route path="/" element={<LandingPage />} />
 
-      {/* The Routes determine which component renders based on the URL */}
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/monitoring" element={<WeatherMonitoring />} />
-      </Routes>
-    </Router>
+          {/* App Dashboard Routes wrapped inside Layout */}
+          <Route
+            path="/dashboard"
+            element={
+              <Layout>
+                <Dashboard />
+              </Layout>
+            }
+          />
+          <Route
+            path="/monitoring"
+            element={
+              <Layout>
+                <WeatherMonitoring />
+              </Layout>
+            }
+          />
+          <Route
+            path="/map"
+            element={
+              <Layout>
+                <InteractiveHeatMap />
+              </Layout>
+            }
+          />
+          <Route
+            path="/hotspots"
+            element={
+              <Layout>
+                <HeatwaveHotspots />
+              </Layout>
+            }
+          />
+          <Route
+            path="/alerts"
+            element={
+              <Layout>
+                <AlertsEarlyWarning />
+              </Layout>
+            }
+          />
+          <Route
+            path="/ai-advisory"
+            element={
+              <Layout>
+                <AIAdvisoryGenerator />
+              </Layout>
+            }
+          />
+          <Route
+            path="/analytics"
+            element={
+              <Layout>
+                <Analytics />
+              </Layout>
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <Layout>
+                <Reports />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Layout>
+                <AboutProject />
+              </Layout>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <Layout>
+                <Settings />
+              </Layout>
+            }
+          />
+
+          {/* Fallback 404 Route */}
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <NotFound />
+              </Layout>
+            }
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

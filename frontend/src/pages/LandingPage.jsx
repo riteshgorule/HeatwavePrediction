@@ -79,10 +79,10 @@ const LandingPage = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
-            <a href="#features" className="hover:text-amber-800 transition-colors">Features</a>
-            <a href="#about" className="hover:text-amber-800 transition-colors">About Project</a>
-            <a href="#how-it-works" className="hover:text-amber-800 transition-colors">How It Works</a>
-            <a href="#tech-stack" className="hover:text-amber-800 transition-colors">Technologies</a>
+            <a href="#features" title="View Heatwave Prediction Features" className="hover:text-amber-800 transition-colors">Features</a>
+            <a href="#about" title="About the Heatwave Prediction Project" className="hover:text-amber-800 transition-colors">About Project</a>
+            <a href="#how-it-works" title="Learn How Heatwave Prediction Works" className="hover:text-amber-800 transition-colors">How It Works</a>
+            <a href="#tech-stack" title="Heatwave Prediction Technologies" className="hover:text-amber-800 transition-colors">Technologies</a>
           </div>
 
           <div className="flex items-center gap-3">
@@ -96,6 +96,7 @@ const LandingPage = () => {
             
             <button 
               onClick={handleDashboardClick}
+              title="Open AI Heatwave Prediction Dashboard"
               className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-stone-900 rounded-lg hover:bg-amber-900 transition-all shadow-sm group"
             >
               <span>View Dashboard</span>

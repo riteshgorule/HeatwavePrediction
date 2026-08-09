@@ -8,6 +8,7 @@ import {
 import { mockAlerts } from '../data/mockData';
 import AlertCard from '../components/AlertCard';
 import EmptyState from '../components/EmptyState';
+import { filterAlerts } from '../utils/alertFilters';
 
 const AlertsEarlyWarning = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -15,13 +16,7 @@ const AlertsEarlyWarning = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredAlerts = useMemo(() => {
-    return mockAlerts.filter(alert => {
-      const matchesTab = activeTab === 'all' || alert.code === activeTab;
-      const matchesSearch = alert.city.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            alert.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            alert.state.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesTab && matchesSearch;
-    });
+    return filterAlerts(mockAlerts, activeTab, searchTerm);
   }, [activeTab, searchTerm]);
 
   return (

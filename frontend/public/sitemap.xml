@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/dashboard</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/monitoring</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/map</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/hotspots</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/alerts</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/ai-advisory</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/analytics</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/reports</loc>
+    </url>
+
+    <url>
+        <loc>https://heatwave-prediction-amber.vercel.app/settings</loc>
+    </url>
+
+</urlset>

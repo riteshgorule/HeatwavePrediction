@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xsl:stylesheet
     version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
@@ -25,7 +27,7 @@
                         background: white;
                         padding: 30px;
                         border-radius: 12px;
-                        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
                     }
 
                     h1 {
@@ -90,7 +92,7 @@
 
                     <div class="count">
                         Pages listed:
-                        <xsl:value-of select="count(urlset/url)"/>
+                        <xsl:value-of select="count(sm:urlset/sm:url)"/>
                     </div>
 
                     <table>
@@ -102,15 +104,15 @@
                         </thead>
 
                         <tbody>
-                            <xsl:for-each select="urlset/url">
+                            <xsl:for-each select="sm:urlset/sm:url">
                                 <tr>
                                     <td>
                                         <xsl:value-of select="position()"/>
                                     </td>
 
                                     <td>
-                                        <a href="{loc}">
-                                            <xsl:value-of select="loc"/>
+                                        <a href="{sm:loc}">
+                                            <xsl:value-of select="sm:loc"/>
                                         </a>
                                     </td>
                                 </tr>
